@@ -1,6 +1,13 @@
+import {Button} from "./Button";
+
+// читати пояснення до Monitor
+
 type SetPropsType = {}
 
 export const Set = (props: SetPropsType) => {
+    const applySettings = ()=>{
+
+    }
     return (
         <div className="container">
             <div className="monitor-set">
@@ -12,7 +19,7 @@ export const Set = (props: SetPropsType) => {
                 <p className="text-error">Enter correct numbers!</p>
             </div>
             <div className="buttons">
-                <button className="apply">apply</button>
+                <Button className={'apply'} value={'apply'} callback={applySettings}/>
             </div>
         </div>
     )
