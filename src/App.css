@@ -1,38 +1,141 @@
-.App {
-  text-align: center;
+html {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*, *::after, *::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+html, body {
+  height: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.App{
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  height: 100vh;
+  background-color: #2f4969;
+}
+
+button {
+  width: 150px;
+  height: 70px;
+  background-color: #48739A;
+  border-radius: 15px;
+  border: 3px solid #7da2be;
+  font-size: 24px;
   color: white;
+  text-transform: uppercase;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover{
+  background-color: #C0C8D9;
+  border: 3px solid #5A8DDA;
+  color: #03618d;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.wrapper {
+
 }
+
+.container {
+  width: 620px;
+  height: 460px;
+  background-color: #48739A;
+  margin: 10px auto;
+  border: 3px solid #5A8DDA;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons {
+  display: flex;
+  gap: 140px;
+}
+
+.monitor-output {
+  width: 520px;
+  height: 250px;
+  background-color: #48739A;
+  border: 3px solid #7da2be;
+  border-radius: 15px;
+  margin-bottom: 45px;
+  text-align: center;
+  padding: 30px;
+}
+
+.number{
+  font-size: 110px;
+  color: white;
+  font-weight: 700;
+}
+
+.monitor-set{
+  width: 520px;
+  height: 250px;
+  background-color: #48739A;
+  border: 3px solid #7da2be;
+  border-radius: 15px;
+  margin-bottom: 45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.title-set{
+  margin-bottom: -10px;
+}
+
+.min, .max{
+  width: 170px;
+  height: 30px;
+  border-radius: 10px;
+  padding-left: 15px;
+  font-size: 16px;
+  background-color: #648cad;
+  color: #ffffff;
+}
+
+.min::placeholder, .max::placeholder{
+  color: #dde3ef;
+  opacity: .5;
+}
+
+.text{
+  display: block;
+  max-width: 300px;
+  color: #dde3ef;
+  font-size: 18px;
+}
+
+.text-error{
+  display: block;
+  max-width: 250px;
+  color: #ff4141;
+  font-size: 20px;
+}
+
+.increment {
+
+}
+
+.set {
+
+}
+
