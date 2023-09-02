@@ -67,6 +67,13 @@ button:hover{
   display: flex;
   gap: 140px;
 }
+button:active{
+  background-color: #95b7ce;
+}
+button:disabled{
+  background-color: #95b7ce;
+  opacity: 0.3;
+}
 
 .monitor-output {
   width: 520px;

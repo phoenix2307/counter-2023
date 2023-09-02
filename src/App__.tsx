@@ -1,10 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
 import {Set__} from "./components/Set__";
+import {Output__} from "./components/Output__";
 
 function App__() {
     const [startN, setStartN] = useState(0)
     const [finishN, setFinishN] = useState(0)
+    const [toggle, setToggle] = useState(true)
 
     // useEffect(() => {
     //     setNumbers(startN, finishN)
@@ -16,13 +18,27 @@ function App__() {
         setStartN(min)
         console.log('max = ' + max)
         setFinishN(max)
+        setToggle(!toggle)
     }
+
+    const toggleToSet = () => {
+        setToggle(!toggle)
+    }
+
 
     return (
         <div className="App">
-            <Set__ callbackSet={setNumbers}/>
-            <div style={{backgroundColor: 'white', width: '50px'}}>{startN}</div>
-            <div style={{backgroundColor: 'white', width: '50px'}}>{finishN}</div>
+            {
+                toggle
+                    ? <Output__ callbackOutput={toggleToSet}
+                                startNumber={startN}
+                                finishNumber={finishN}/>
+                    : <Set__ callbackSet={setNumbers}/>
+            }
+            {/*<Output__ callbackOutput={toggleToSet}*/}
+            {/*          startNumber={startN}*/}
+            {/*          finishNumber={finishN}/>*/}
+            {/*<Set__ callbackSet={setNumbers}/>*/}
         </div>
     );
 }

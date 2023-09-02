@@ -22,8 +22,7 @@ function App() {
         <div className="App">
             {
                 windowType
-                    ?
-                    <Set callbackSet={setActualNumber}/>
+                    ? <Set callbackSet={setActualNumber}/>
                     : <Output
                         callbackOutput={toggleWindow}
                         startNumber={actualMin}

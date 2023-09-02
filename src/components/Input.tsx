@@ -10,8 +10,9 @@ type InputPropsType = {
 export const Input = (props: InputPropsType) => {
     const [value, setValue] = useState(0)
     const inputHandler = (e:ChangeEvent<HTMLInputElement>) => {
-        setValue(+e.currentTarget.value)
-        props.callback(value)
+        const newValue = +e.currentTarget.value
+        setValue(newValue)
+        props.callback(newValue)
     }
 
     return (
@@ -25,9 +26,4 @@ export const Input = (props: InputPropsType) => {
     )
 }
 
-{/*<input*/}
-{/*    type={props.type}*/}
-{/*    className={props.className}*/}
-{/*    placeholder={props.placeholder}*/}
-{/*    onChange={inputHandler}*/}
-{/*>{value}</input>*/}
+

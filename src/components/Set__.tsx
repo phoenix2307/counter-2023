@@ -8,15 +8,11 @@ type Set__PropsType = {
 
 export const Set__ = (props: Set__PropsType) => {
 
-    //чому не рендериться остання зміна в стейті?!
-
     const [minN, setMinN] = useState(0)
     const [maxN, setMaxN] = useState(0)
 
     const callbackMin = (minValue: number) => {
         setMinN(minValue)
-        console.log(minValue)
-        console.log(minN)
     }
     const callbackMax = (maxValue: number) => {
         setMaxN(maxValue)

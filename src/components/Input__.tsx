@@ -19,8 +19,10 @@ export const Input__ = (props: InputPropsType) => {
     //     props.callback(value)
     // }
     const inputHandler = (e:ChangeEvent<HTMLInputElement>) => {
-        setValue(+e.currentTarget.value)
-        props.callback(+e.currentTarget.value)
+        const newValue = +e.currentTarget.value
+        setValue(newValue)
+        props.callback(newValue)
+
     }
 
     return (

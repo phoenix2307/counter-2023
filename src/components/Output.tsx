@@ -10,18 +10,24 @@ type OutputPropsType = {
 
 export const Output = (props: OutputPropsType) => {
 
+
     const [currentNumber, setCurrentNumber] = useState(props.startNumber)
 
     const increment = () => {
         let newNumber = currentNumber + 1
-        if (props.finishNumber > currentNumber){
+        if (props.finishNumber > currentNumber) {
             setCurrentNumber(newNumber)
         }
+    }
+
+    const reset = () => {
+        setCurrentNumber(props.startNumber)
     }
     const toggleSetting = () => {
         props.callbackOutput()
     }
     const styleNumber = props.finishNumber === currentNumber ? 'stopCount' : 'number'
+    const btnDis = props.finishNumber === currentNumber ? true : false
 
     return (
         <div className="container">
@@ -30,7 +36,10 @@ export const Output = (props: OutputPropsType) => {
                     {currentNumber}</p>
             </div>
             <div className="buttons">
-                <Button className={'increment'} value={'inc'} callback={increment}/>
+                <Button className={'increment'} value={'inc'} callback={increment}
+                disable={btnDis}/>
+                <Button className={'increment'} value={'res'} callback={reset}
+                disable={!btnDis}/>
                 <Button className={'set'} value={'set'} callback={toggleSetting}/>
             </div>
 
