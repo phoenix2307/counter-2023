@@ -1,14 +1,14 @@
 import {Button} from "./Button";
 import {useState} from "react";
 
-type OutputPropsType = {
+type Output__PropsType = {
     callbackOutput: () => void
     startNumber: number
     finishNumber: number
 }
 
 
-export const Output = (props: OutputPropsType) => {
+export const Output__ = (props: Output__PropsType) => {
 
     const [currentNumber, setCurrentNumber] = useState(props.startNumber)
 

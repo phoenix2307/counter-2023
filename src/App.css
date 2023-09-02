@@ -85,6 +85,12 @@ button:hover{
   font-weight: 700;
 }
 
+.stopCount{
+  font-size: 110px;
+  color: #ee2e2e;
+  font-weight: 700;
+}
+
 .monitor-set{
   width: 520px;
   height: 250px;

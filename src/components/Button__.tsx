@@ -5,7 +5,7 @@ type ButtonPropsType = {
     callback: ()=> void
     disable?: boolean
 }
-export const Button = (props: ButtonPropsType)=>{
+export const Button__ = (props: ButtonPropsType)=>{
     const btnCallback = ()=> {
         props.callback()
     }

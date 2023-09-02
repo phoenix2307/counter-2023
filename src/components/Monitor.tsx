@@ -6,7 +6,7 @@ import {useState} from "react";
 
 type MonitorPropsType = {
     className: string // клас монітора
-    text: string // текст внизу екрана
+    text?: string // текст внизу екрана
     classNameText?: string // стилізація тексту
 }
 
@@ -15,25 +15,28 @@ export const Monitor = (props: MonitorPropsType) => {
     const [maxInput, setMaxInput] = useState(0)
     const [textMessage, setTextMessage] = useState('Enter numbers and apply changes')
 
-    minInput>=maxInput
-    ? setTextMessage('Enter correct numbers!')
-        : setTextMessage('Enter numbers and apply changes')
+    // minInput>=maxInput
+    // ? setTextMessage('Enter correct numbers!')
+    //     : setTextMessage('Enter numbers and apply changes')
 
     return (
 
-        <div className="monitor-set">
+        <div className={props.className}>
             <p className="title-set">min number:</p>
             <Input type={'number'}
                    className={'min'}
                    placeholder={'enter min number'}
-                   callback={(value) => setMinInput(value)}/>
+                   callback={(value) => setMinInput(value)}
+            />
             <p className="title-set">max number:</p>
             <Input type={'number'}
                    className={'max'}
                    placeholder={'enter max number'}
-                   callback={(value) => setMaxInput(value)}/>
-            <p className="text">Enter numbers and apply changes</p>
-            <p className="text-error">Enter correct numbers!</p>
+                   callback={(value) => setMaxInput(value)}
+            />
+            <p className={props.classNameText}>{props.text}</p>
+            {/*<p className="text">Enter numbers and apply changes</p>*/}
+            {/*<p className="text-error">Enter correct numbers!</p>*/}
         </div>
     )
 }

@@ -4,15 +4,31 @@ import {Output} from "./components/Output";
 import {Set} from "./components/Set";
 
 function App() {
-    const [output, setOutput] = useState(false)
+    const [windowType, setWindowType] = useState(true)
+    const toggleWindow = () => {
+        setWindowType(!windowType)
+    }
+
+    const [actualMin, setActualMin] = useState(0)
+    const [actualMax, setActualMax] = useState(5)
+    const setActualNumber = (min: number, max: number) => {
+        setActualMin(min)
+        setActualMax(max)
+        setWindowType(!windowType)
+    }
+
+
     return (
         <div className="App">
             {
-                output
-                    ? <Output/>
-                    : <Set/>
+                windowType
+                    ?
+                    <Set callbackSet={setActualNumber}/>
+                    : <Output
+                        callbackOutput={toggleWindow}
+                        startNumber={actualMin}
+                        finishNumber={actualMax}/>
             }
-            <button onClick={()=>setOutput(!output)}>toggle</button>
         </div>
     );
 }

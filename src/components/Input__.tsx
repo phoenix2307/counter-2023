@@ -1,4 +1,4 @@
-import {ChangeEvent, useState} from "react";
+import {ChangeEvent, useEffect, useState} from "react";
 
 type InputPropsType = {
     type: string
@@ -7,11 +7,20 @@ type InputPropsType = {
     callback: (value: number)=> void
 }
 
-export const Input = (props: InputPropsType) => {
+export const Input__ = (props: InputPropsType) => {
     const [value, setValue] = useState(0)
+
+    // useEffect(()=>{
+    //     props.callback(value)
+    // },[value])
+    //
+    // const inputHandler = (e:ChangeEvent<HTMLInputElement>) => {
+    //     setValue(+e.currentTarget.value)
+    //     props.callback(value)
+    // }
     const inputHandler = (e:ChangeEvent<HTMLInputElement>) => {
         setValue(+e.currentTarget.value)
-        props.callback(value)
+        props.callback(+e.currentTarget.value)
     }
 
     return (
@@ -24,10 +33,3 @@ export const Input = (props: InputPropsType) => {
                 value={value}/>
     )
 }
-
-{/*<input*/}
-{/*    type={props.type}*/}
-{/*    className={props.className}*/}
-{/*    placeholder={props.placeholder}*/}
-{/*    onChange={inputHandler}*/}
-{/*>{value}</input>*/}
