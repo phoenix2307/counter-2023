@@ -65,7 +65,7 @@ button:hover{
 
 .buttons {
   display: flex;
-  gap: 140px;
+  gap: 35px;
 }
 button:active{
   background-color: #95b7ce;
