@@ -22,19 +22,19 @@ export const Monitor = (props: MonitorPropsType) => {
     return (
 
         <div className={props.className}>
-            <p className="title-set">min number:</p>
-            <Input type={'number'}
-                   className={'min'}
-                   placeholder={'enter min number'}
-                   callback={(value) => setMinInput(value)}
-            />
-            <p className="title-set">max number:</p>
-            <Input type={'number'}
-                   className={'max'}
-                   placeholder={'enter max number'}
-                   callback={(value) => setMaxInput(value)}
-            />
-            <p className={props.classNameText}>{props.text}</p>
+            {/*<p className="title-set">min number:</p>*/}
+            {/*<Input type={'number'}*/}
+            {/*       className={'min'}*/}
+            {/*       placeholder={'enter min number'}*/}
+            {/*       callback={(value) => setMinInput(value)}*/}
+            {/*/>*/}
+            {/*<p className="title-set">max number:</p>*/}
+            {/*<Input type={'number'}*/}
+            {/*       className={'max'}*/}
+            {/*       placeholder={'enter max number'}*/}
+            {/*       callback={(value) => setMaxInput(value)}*/}
+            {/*/>*/}
+            {/*<p className={props.classNameText}>{props.text}</p>*/}
             {/*<p className="text">Enter numbers and apply changes</p>*/}
             {/*<p className="text-error">Enter correct numbers!</p>*/}
         </div>

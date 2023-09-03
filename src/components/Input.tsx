@@ -5,10 +5,12 @@ type InputPropsType = {
     className: string
     placeholder: string
     callback: (value: number)=> void
+    startValue: number
 }
 
 export const Input = (props: InputPropsType) => {
-    const [value, setValue] = useState(0)
+    // debugger
+    const [value, setValue] = useState(props.startValue)
     const inputHandler = (e:ChangeEvent<HTMLInputElement>) => {
         const newValue = +e.currentTarget.value
         setValue(newValue)

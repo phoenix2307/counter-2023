@@ -9,7 +9,9 @@ type OutputPropsType = {
 
 
 export const Output = (props: OutputPropsType) => {
-
+    // debugger
+    console.log('output start - ' + props.startNumber)
+    console.log('output finish - ' + props.finishNumber)
 
     const [currentNumber, setCurrentNumber] = useState(props.startNumber)
 
@@ -26,6 +28,7 @@ export const Output = (props: OutputPropsType) => {
     const toggleSetting = () => {
         props.callbackOutput()
     }
+
     const styleNumber = props.finishNumber === currentNumber ? 'stopCount' : 'number'
     const btnDis = props.finishNumber === currentNumber ? true : false
 

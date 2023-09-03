@@ -4,15 +4,18 @@ import {useEffect, useState} from "react";
 
 type SetPropsType = {
     callbackSet: (min: number, max: number) => void
+    minSetValue: number
+    maxSetValue: number
 }
 
 export const Set = (props: SetPropsType) => {
+    // debugger
 
-    const [min, setMin] = useState(0)
-    const [max, setMax] = useState(0)
+    console.log('setMIn - ' + props.minSetValue)
+    console.log('setMax - ' + props.maxSetValue)
+    const [min, setMin] = useState(props.minSetValue)
+    const [max, setMax] = useState(props.maxSetValue)
     const [error, setError] = useState(false)
-    // const [disBtn, setDisBtn] = useState(false)
-
 
 
     const applySettings = () => {
@@ -24,6 +27,7 @@ export const Set = (props: SetPropsType) => {
 
     }
     const callbackMin = (min: number) => {
+
         setMin(min)
         if (min > max || min === max) {
             setError(true)
@@ -45,9 +49,19 @@ export const Set = (props: SetPropsType) => {
         <div className="container">
             <div className="monitor-set">
                 <p className="title-set">min number:</p>
-                <Input type={'number'} className={'min'} placeholder={'enter min number'} callback={callbackMin}/>
+                <Input type={'number'}
+                       className={'min'}
+                       placeholder={'enter min number'}
+                       callback={callbackMin}
+                       startValue={min}
+                />
                 <p className="title-set">max number:</p>
-                <Input type={'number'} className={'max'} placeholder={'enter max number'} callback={callbackMax}/>
+                <Input type={'number'}
+                       className={'max'}
+                       placeholder={'enter max number'}
+                       callback={callbackMax}
+                       startValue={max}
+                />
                 <p className={styleText}>{textMessage}</p>
                 {/*<p className="text">Enter numbers and apply changes</p>*/}
                 {/*<p className="text-error">Enter correct numbers!</p>*/}
@@ -57,7 +71,7 @@ export const Set = (props: SetPropsType) => {
                         value={'apply'}
                         callback={applySettings}
                         disable={disBtn}
-                        />
+                />
             </div>
         </div>
     )
